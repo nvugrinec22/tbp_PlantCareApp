@@ -1,0 +1,65 @@
+Pokretanje aplikacije
+
+Aplikacija za praćenje i pomoć u održavanju rasta biljaka razvijena je u programskom jeziku Python, dok se za pohranu podataka koristi PostgreSQL relacijska baza podataka. Prije samog pokretanja aplikacije potrebno je instalirati bazu podataka i pripremiti radno okruženje.
+--------------------------------------------------------------
+Preduvjeti
+
+Za pokretanje aplikacije potrebno je imati:
+
+instaliran PostgreSQL (verzija 13 ili novija),
+
+pokrenut PostgreSQL server (na portu 5432),
+
+instaliran Python 3,
+
+pristup terminalu (Command Prompt ili PowerShell).
+
+Korisnik baze podataka je postgres, a lozinka je 123.
+
+Također je potrebno imati instalirane dodatne Python pakete:
+
+    -psycopg2-binary – za povezivanje aplikacije s PostgreSQL bazom podataka
+
+    -Pillow – za obradu i prikaz slika biljaka u aplikaciji
+
+Ako paketi nisu instalirani, mogu se dodati pomoću sljedećih naredbi:
+
+    py -m pip install psycopg2-binary
+    py -m pip install Pillow
+
+--------------------------------------------------------------
+Instalacija baze podataka
+
+Instalacija baze podataka vrši se pomoću pripremljene skripte install_db.bat, koja automatski kreira bazu podataka, tablice, tipove, okidače, poglede i pravila.
+
+Postupak instalacije:
+
+    1. Otvori se terminal (Command Prompt ili PowerShell)
+
+    2. Pozicionira se u glavni direktorij aplikacije
+
+    3. Pokrene se skripta naredbom:
+
+        ./install_db.bat
+
+        (lozinka je 123)
+--------------------------------------------------------------
+
+Nakon izvršavanja skripte u konzoli se ispisuje poruka o uspješnoj instalaciji baze podataka
+
+Ako PostgreSQL server nije pokrenut, skripta neće moći uspostaviti vezu s bazom podataka te će se u konzoli ispisati poruka o grešci.
+--------------------------------------------------------------
+
+Pokretanje aplikacije
+
+Nakon uspješne instalacije baze podataka potrebno je pokrenuti samu aplikaciju.
+
+Postupak pokretanja:
+
+    1. U terminalu se pozicionira u direktorij app (cd app)
+
+    2. Aplikacija se pokreće naredbom:
+
+        python main.py
+
+Nakon pokretanja otvara se grafičko sučelje aplikacije
